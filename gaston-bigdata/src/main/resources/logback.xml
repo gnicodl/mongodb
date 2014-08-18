@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration scan="true">
+
+	<!-- Console appender -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d %-5p [%c] - %m%n</pattern>
+		</encoder>
+	</appender>
+
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+	</root>
+
+	<!-- DISABLE VELOCITY LOGGING -->
+	<logger name="org.apache.velocity" level="OFF"/>
+	
+	<!-- ENABLE TO SEE TRANSACTION LOGGING -->
+	<logger name="org.hibernate.transaction.JDBCTransaction" level="DEBUG"/>
+	<logger name="org.hibernate.jdbc.ConnectionManager" level="DEBUG"/>
+	<logger name="org.springframework.orm.jpa.JpaTransactionManager" level="DEBUG"/>
+	<!--  
+	<logger name="org.springframework.orm.jpa" level="DEBUG">
+		<appender-ref ref="STDOUT" />
+	</logger>
+	
+	<logger name="org.springframework.transaction" level="DEBUG">
+		<appender-ref ref="STDOUT" />
+	</logger> -->
+
+</configuration>
