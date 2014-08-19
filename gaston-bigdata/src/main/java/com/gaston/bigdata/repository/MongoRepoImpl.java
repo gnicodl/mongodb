@@ -9,7 +9,6 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 
 import com.gaston.bigdata.mongodb.entity.Customer;
-import com.gaston.bigdata.mongodb.entity.Project;
 import com.gaston.bigdata.repository.interfaces.MongoRepo;
 
 @Repository
@@ -30,18 +29,13 @@ public class MongoRepoImpl implements MongoRepo {
 	}
 
 	@Override
-	public void save(Project project) {
-		operations.save(project);
-	}
-
-	@Override
 	public List<Customer> findAll() {
 		return operations.findAll(Customer.class);
 	}
-
+	
 	@Override
-	public List<Customer> findByFirstName(String name) {
-		Query query = new BasicQuery("{firstName:'"+name+"'}");
+	public List<Customer> findByFirstName(String name){
+		Query query = new BasicQuery("{firstName:'Gaston'}");
 		return operations.find(query, Customer.class);
 	}
 
