@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
@@ -17,7 +16,6 @@ public class Customer {
 	@Indexed
 	private String firstName;
 	private String lastName;
-	@DBRef
 	private List<Project> projects;
 
 	public Customer() {
